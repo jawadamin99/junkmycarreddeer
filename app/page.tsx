@@ -36,6 +36,7 @@ import strippedCarPhoto from "@/assets/stripped-sedan-junkyard.jpeg";
 import acreageTruckPhoto from "@/assets/older-ford-f150-acreage.jpeg";
 import redDeerCityMap from "@/assets/red-deer-city-map.png";
 import { QuoteForm } from "@/components/quote-form";
+import { JsonLd, websiteSchema } from "@/components/seo-schema";
 
 const phoneDisplay = "(403) 427-0732";
 const phoneHref = "tel:+14034270732";
@@ -204,9 +205,14 @@ export default function Home() {
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "AutomotiveBusiness",
+    "@id": "https://www.junkmycarreddeer.ca/#business",
     name: "Junk My Car Red Deer",
-    url: "https://junkmycarreddeer.ca/",
+    url: "https://www.junkmycarreddeer.ca/",
+    logo: "https://www.junkmycarreddeer.ca/junk-my-car-red-deer-logo.png",
+    image: "https://www.junkmycarreddeer.ca/junk-my-car-red-deer-logo.png",
     telephone: "+1-403-427-0732",
+    email: "offers@junkmycarreddeer.ca",
+    priceRange: "$-$$$$",
     address: {
       "@type": "PostalAddress",
       streetAddress: "4909 48 Street",
@@ -216,6 +222,13 @@ export default function Home() {
       addressCountry: "CA",
     },
     areaServed: ["Red Deer", "Red Deer County", ...towns.map(([town]) => town)],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-403-427-0732",
+      contactType: "sales",
+      areaServed: "CA-AB",
+      availableLanguage: "English",
+    },
   };
 
   return (
@@ -586,9 +599,10 @@ export default function Home() {
 
       <div className="mobile-actions"><a href={phoneHref}><Phone aria-hidden="true" /> Call now</a><a href="#quote"><BadgeDollarSign aria-hidden="true" /> Get offer</a></div>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <JsonLd data={websiteSchema} />
+      <JsonLd data={businessSchema} />
+      <JsonLd data={howToSchema} />
+      <JsonLd data={faqSchema} />
     </>
   );
 }

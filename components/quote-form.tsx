@@ -15,7 +15,10 @@ export function QuoteForm() {
     setMessage("");
 
     const form = event.currentTarget;
-    const payload = Object.fromEntries(new FormData(form));
+    const payload = {
+      ...Object.fromEntries(new FormData(form)),
+      sourcePage: window.location.pathname,
+    };
 
     try {
       const response = await fetch("/api/quote", {
@@ -60,27 +63,27 @@ export function QuoteForm() {
 
       <div className="form-grid">
         <label>
-          <span>Name</span>
+          <span>Name <b className="required-marker" aria-hidden="true">*</b></span>
           <input name="name" autoComplete="name" placeholder="Your name" required />
         </label>
         <label>
-          <span>Phone</span>
+          <span>Phone <b className="required-marker" aria-hidden="true">*</b></span>
           <input name="phone" type="tel" autoComplete="tel" placeholder="(403) 555-0123" required />
         </label>
         <label className="field-wide">
-          <span>Year / Make / Model</span>
+          <span>Year / Make / Model <b className="required-marker" aria-hidden="true">*</b></span>
           <input name="vehicle" placeholder="e.g. 2013 Ford F-150" required />
         </label>
         <label>
-          <span>City or town</span>
+          <span>City or town <b className="required-marker" aria-hidden="true">*</b></span>
           <input name="city" autoComplete="address-level2" placeholder="e.g. Red Deer" required />
         </label>
         <label>
-          <span>Email <em>optional</em></span>
+          <span>Email</span>
           <input name="email" type="email" autoComplete="email" placeholder="you@email.com" />
         </label>
         <label className="field-wide">
-          <span>Anything else we should know? <em>optional</em></span>
+          <span>Anything else we should know?</span>
           <textarea name="message" rows={2} placeholder="Condition, damage, pickup timing…" />
         </label>
         <label className="honeypot" aria-hidden="true">
@@ -89,12 +92,14 @@ export function QuoteForm() {
         </label>
       </div>
 
-      <button className="button button-primary button-full" type="submit" disabled={state === "submitting"}>
-        {state === "submitting" ? <LoaderCircle className="spin" aria-hidden="true" /> : null}
-        {state === "submitting" ? "Sending…" : "Get My Cash Offer"}
-        {state !== "submitting" ? <ArrowRight aria-hidden="true" /> : null}
-      </button>
-      <p className="form-privacy">We never share your information. A real person usually replies within a few hours.</p>
+      <div className="form-actions">
+        <p className="form-privacy">We never share your information. A real person usually replies within a few hours.</p>
+        <button className="button button-primary button-full" type="submit" disabled={state === "submitting"}>
+          {state === "submitting" ? <LoaderCircle className="spin" aria-hidden="true" /> : null}
+          {state === "submitting" ? "Sending…" : "Get My Cash Offer"}
+          {state !== "submitting" ? <ArrowRight aria-hidden="true" /> : null}
+        </button>
+      </div>
       {state === "error" ? <p className="form-error" role="alert">{message}</p> : null}
     </form>
   );

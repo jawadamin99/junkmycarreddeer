@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { BreadcrumbSchema, JsonLd } from "@/components/seo-schema";
 import {
   ArrowDownRight,
   ArrowRight,
@@ -35,12 +36,12 @@ export const metadata: Metadata = {
   title: "Junk Car Removal Red Deer | Free Towing & Cash Paid",
   description:
     "Free junk car removal anywhere in Red Deer. We haul away non-running, wrecked and end-of-life vehicles, pay cash at pickup, and do the paperwork.",
-  alternates: { canonical: "/junk-car-removal-red-deer" },
+  alternates: { canonical: "https://www.junkmycarreddeer.ca/junk-car-removal-red-deer" },
   openGraph: {
     title: "Junk Car Removal Red Deer | Free Towing & Cash Paid",
     description:
       "We remove non-running, wrecked and unwanted vehicles across Red Deer, pay cash at pickup and include the tow.",
-    url: "/junk-car-removal-red-deer",
+    url: "https://www.junkmycarreddeer.ca/junk-car-removal-red-deer",
     type: "website",
     images: [
       {
@@ -145,7 +146,7 @@ export default function JunkCarRemovalPage() {
     "@type": "Service",
     name: "Junk Car Removal Red Deer",
     serviceType: "Free junk car removal and cash vehicle buying",
-    url: "https://junkmycarreddeer.ca/junk-car-removal-red-deer",
+    url: "https://www.junkmycarreddeer.ca/junk-car-removal-red-deer",
     description: "Removal of non-running, wrecked and end-of-life vehicles with free towing and cash paid at pickup.",
     provider: {
       "@type": "AutomotiveBusiness",
@@ -403,8 +404,9 @@ export default function JunkCarRemovalPage() {
 
       <div className="mobile-actions"><a href={phoneHref}><Phone aria-hidden="true" /> Call now</a><a href="#junk-quote"><BadgeDollarSign aria-hidden="true" /> Get offer</a></div>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbSchema current="Junk Car Removal Red Deer" path="/junk-car-removal-red-deer" />
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={faqSchema} />
     </>
   );
 }

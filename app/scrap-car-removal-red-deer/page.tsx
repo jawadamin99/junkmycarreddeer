@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { BreadcrumbSchema, JsonLd } from "@/components/seo-schema";
 import {
   ArrowDownRight,
   ArrowRight,
@@ -35,12 +36,12 @@ export const metadata: Metadata = {
   title: "Scrap Car Removal Red Deer | Cash for Scrap Cars & Free Tow",
   description:
     "Scrap car removal in Red Deer with cash paid on the spot. We price by weight, parts and current metal markets, and the tow is always included.",
-  alternates: { canonical: "/scrap-car-removal-red-deer" },
+  alternates: { canonical: "https://www.junkmycarreddeer.ca/scrap-car-removal-red-deer" },
   openGraph: {
     title: "Scrap Car Removal Red Deer | Cash for Scrap Cars & Free Tow",
     description:
       "Get a fair scrap-car offer based on weight, reusable parts and current metal markets—with free towing across Red Deer and Central Alberta.",
-    url: "/scrap-car-removal-red-deer",
+    url: "https://www.junkmycarreddeer.ca/scrap-car-removal-red-deer",
     type: "website",
     images: [
       {
@@ -162,7 +163,7 @@ export default function ScrapCarRemovalPage() {
     "@type": "Service",
     name: "Scrap Car Removal Red Deer",
     serviceType: "Scrap car removal and cash vehicle buying",
-    url: "https://junkmycarreddeer.ca/scrap-car-removal-red-deer",
+    url: "https://www.junkmycarreddeer.ca/scrap-car-removal-red-deer",
     provider: {
       "@type": "AutomotiveBusiness",
       name: "Junk My Car Red Deer",
@@ -460,8 +461,9 @@ export default function ScrapCarRemovalPage() {
 
       <div className="mobile-actions"><a href={phoneHref}><Phone aria-hidden="true" /> Call now</a><a href="#scrap-quote"><BadgeDollarSign aria-hidden="true" /> Get offer</a></div>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbSchema current="Scrap Car Removal Red Deer" path="/scrap-car-removal-red-deer" />
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={faqSchema} />
     </>
   );
 }

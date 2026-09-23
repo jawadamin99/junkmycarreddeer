@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { BreadcrumbSchema, JsonLd } from "@/components/seo-schema";
 import {
   ArrowDownRight,
   ArrowRight,
@@ -34,11 +35,11 @@ export const metadata: Metadata = {
   title: "Car Wreckers Red Deer | We Buy, Dismantle & Pay Cash",
   description:
     "Red Deer car wreckers buying vehicles in any condition. We dismantle, recover parts and recycle properly — and pay cash when we collect your car.",
-  alternates: { canonical: "/car-wreckers-red-deer" },
+  alternates: { canonical: "https://www.junkmycarreddeer.ca/car-wreckers-red-deer" },
   openGraph: {
     title: "Car Wreckers Red Deer | We Buy, Dismantle & Pay Cash",
     description: "We buy vehicles in any condition, recover usable parts, recycle the rest properly and pay cash at pickup.",
-    url: "/car-wreckers-red-deer",
+    url: "https://www.junkmycarreddeer.ca/car-wreckers-red-deer",
     type: "website",
     images: [{ url: damagedTruckPhoto.src, width: 1536, height: 2048, alt: "Damaged truck assessed by car wreckers in Red Deer" }],
   },
@@ -80,7 +81,7 @@ export default function CarWreckersPage() {
     "@type": "Service",
     name: "Car Wreckers Red Deer",
     serviceType: "Vehicle dismantling, auto salvage and vehicle buying",
-    url: "https://junkmycarreddeer.ca/car-wreckers-red-deer",
+    url: "https://www.junkmycarreddeer.ca/car-wreckers-red-deer",
     description: "We buy vehicles in any condition, recover usable parts, recycle responsibly and pay cash at pickup.",
     provider: { "@type": "AutomotiveBusiness", name: "Junk My Car Red Deer", telephone: "+1-403-427-0732", address: { "@type": "PostalAddress", streetAddress: "4909 48 Street", addressLocality: "Red Deer", addressRegion: "AB", postalCode: "T4N 1S8", addressCountry: "CA" } },
     areaServed: "Red Deer and Central Alberta",
@@ -135,7 +136,8 @@ export default function CarWreckersPage() {
 
       <footer className="site-footer"><div className="shell footer-grid"><div className="footer-brand"><Image src={logo} alt="Junk My Car Red Deer" sizes="230px" /><p>Parts-first vehicle dismantling, responsible recycling, free towing and cash paid across Central Alberta.</p><a href={phoneHref}><Phone aria-hidden="true" /> {phoneDisplay}</a></div><div><h3>Services</h3><Link href="/junk-car-removal-red-deer">Junk Car Removal</Link><Link href="/scrap-car-removal-red-deer">Scrap Car Removal</Link><Link href="/sell-my-car-red-deer">Sell My Car</Link><Link href="/car-wreckers-red-deer">Car Wreckers</Link><Link href="/free-towing-red-deer">Free Towing</Link></div><div><h3>On this page</h3><a href="#dismantling">Dismantling</a><a href="#value">Vehicle value</a><a href="#parts">Parts demand</a><a href="#recycling">Recycling</a><a href="#faq">Questions</a></div><div><h3>Visit or contact</h3><p>4909 48 Street<br />Red Deer, AB T4N 1S8</p><p>Mon–Sat: 8am–8pm<br />Sunday: By appointment</p><a className="footer-quote" href="#wrecker-quote">Request an offer <ArrowRight aria-hidden="true" /></a></div></div><div className="shell footer-bottom"><span>© {new Date().getFullYear()} Junk My Car Red Deer</span><span>Serving Red Deer &amp; Central Alberta</span></div></footer>
       <div className="mobile-actions"><a href={phoneHref}><Phone aria-hidden="true" /> Call now</a><a href="#wrecker-quote"><BadgeDollarSign aria-hidden="true" /> Get offer</a></div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbSchema current="Car Wreckers Red Deer" path="/car-wreckers-red-deer" />
+      <JsonLd data={serviceSchema} /><JsonLd data={faqSchema} />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { BreadcrumbSchema, JsonLd } from "@/components/seo-schema";
 import {
   ArrowDownRight,
   ArrowRight,
@@ -33,11 +34,11 @@ export const metadata: Metadata = {
   title: "Sell My Car Red Deer | One Cash Offer, No Haggling",
   description:
     "Want to sell your car in Red Deer without the ads, no-shows and haggling? Get one cash offer, free pickup at your door, and payment the day we collect it.",
-  alternates: { canonical: "/sell-my-car-red-deer" },
+  alternates: { canonical: "https://www.junkmycarreddeer.ca/sell-my-car-red-deer" },
   openGraph: {
     title: "Sell My Car Red Deer | One Cash Offer, No Haggling",
     description: "One cash offer, free pickup at your door, and payment the day we collect your vehicle in Red Deer.",
-    url: "/sell-my-car-red-deer",
+    url: "https://www.junkmycarreddeer.ca/sell-my-car-red-deer",
     type: "website",
     images: [{ url: heroSuvPhoto.src, width: 1284, height: 986, alt: "Used SUV ready to sell for cash in Red Deer" }],
   },
@@ -101,7 +102,7 @@ export default function SellMyCarPage() {
     "@type": "Service",
     name: "Sell My Car Red Deer",
     serviceType: "Direct cash vehicle buying",
-    url: "https://junkmycarreddeer.ca/sell-my-car-red-deer",
+    url: "https://www.junkmycarreddeer.ca/sell-my-car-red-deer",
     description: "One cash offer for used vehicles in Red Deer, with free pickup and payment at collection.",
     provider: {
       "@type": "AutomotiveBusiness",
@@ -238,8 +239,9 @@ export default function SellMyCarPage() {
 
       <footer className="site-footer"><div className="shell footer-grid"><div className="footer-brand"><Image src={logo} alt="Junk My Car Red Deer" sizes="230px" /><p>One cash offer, free pickup, and same-day payment across Red Deer and Central Alberta.</p><a href={phoneHref}><Phone aria-hidden="true" /> {phoneDisplay}</a></div><div><h3>Services</h3><Link href="/junk-car-removal-red-deer">Junk Car Removal</Link><Link href="/scrap-car-removal-red-deer">Scrap Car Removal</Link><Link href="/sell-my-car-red-deer">Sell My Car</Link><Link href="/car-wreckers-red-deer">Car Wreckers</Link><Link href="/free-towing-red-deer">Free Towing</Link></div><div><h3>On this page</h3><a href="#options">Selling options</a><a href="#value">What we pay</a><a href="#appointment">The appointment</a><a href="#areas">Coverage</a><a href="#faq">Questions</a></div><div><h3>Visit or contact</h3><p>4909 48 Street<br />Red Deer, AB T4N 1S8</p><p>Mon–Sat: 8am–8pm<br />Sunday: By appointment</p><a className="footer-quote" href="#sell-quote">Request an offer <ArrowRight aria-hidden="true" /></a></div></div><div className="shell footer-bottom"><span>© {new Date().getFullYear()} Junk My Car Red Deer</span><span>Serving Red Deer &amp; Central Alberta</span></div></footer>
       <div className="mobile-actions"><a href={phoneHref}><Phone aria-hidden="true" /> Call now</a><a href="#sell-quote"><BadgeDollarSign aria-hidden="true" /> Get offer</a></div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <BreadcrumbSchema current="Sell My Car Red Deer" path="/sell-my-car-red-deer" />
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={faqSchema} />
     </>
   );
 }
