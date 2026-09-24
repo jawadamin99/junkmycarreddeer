@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import heroTowPhoto from "@/assets/junk-pickup-free-towing.jpeg";
 import "./globals.css";
 
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-CA">
-      <body><SiteHeader />{children}</body>
+      <body><SiteHeader />{children}<GoogleAnalytics /></body>
     </html>
   );
 }

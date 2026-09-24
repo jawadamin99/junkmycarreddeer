@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ArrowRight, CheckCircle2, LoaderCircle } from "lucide-react";
+import { trackGoogleEvent } from "@/components/google-analytics";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -18,6 +19,7 @@ export function QuoteForm() {
     const payload = {
       ...Object.fromEntries(new FormData(form)),
       sourcePage: window.location.pathname,
+      pageUrl: window.location.href,
     };
 
     try {
@@ -31,6 +33,11 @@ export function QuoteForm() {
 
       setState("success");
       setMessage(result.message ?? "Thanks — we’ll call you with an offer shortly.");
+      trackGoogleEvent("form_submit", {
+        form_name: "cash_offer_quote",
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+      });
       form.reset();
     } catch (error) {
       setState("error");

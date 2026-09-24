@@ -13,6 +13,7 @@ type QuotePayload = {
   email?: unknown;
   message?: unknown;
   sourcePage?: unknown;
+  pageUrl?: unknown;
   company?: unknown;
 };
 
@@ -45,6 +46,14 @@ export async function POST(request: Request) {
     email: cleanLine(payload.email, 150),
     message: cleanMessage(payload.message),
     sourcePage: cleanLine(payload.sourcePage, 250) || "/",
+    pageUrl: cleanLine(payload.pageUrl, 1000),
+    ipAddress: cleanLine(
+      request.headers.get("x-forwarded-for")?.split(",")[0]
+        || request.headers.get("x-real-ip")
+        || "Not available",
+      100,
+    ),
+    browser: cleanLine(request.headers.get("user-agent") || "Not available", 600),
   };
 
   if (!lead.name || !lead.phone || !lead.vehicle || !lead.city) {

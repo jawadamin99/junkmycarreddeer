@@ -6,6 +6,9 @@ export type QuoteLead = {
   email: string;
   message: string;
   sourcePage: string;
+  pageUrl: string;
+  ipAddress: string;
+  browser: string;
 };
 
 const brandRed = "#ed1c24";
@@ -25,10 +28,15 @@ const display = (value: string, fallback = "Not provided") =>
 
 export function buildQuoteEmail(lead: QuoteLead, reference: string, submittedAt: Date) {
   const phoneHref = `tel:${lead.phone.replace(/[^\d+]/g, "")}`;
-  const sourcePath = lead.sourcePage.startsWith("/") && !lead.sourcePage.startsWith("//")
-    ? lead.sourcePage
-    : "/";
-  const sourceUrl = new URL(sourcePath, "https://www.junkmycarreddeer.ca").toString();
+  let sourceUrl = "https://www.junkmycarreddeer.ca/";
+  try {
+    const submittedUrl = new URL(lead.pageUrl || lead.sourcePage, sourceUrl);
+    if (submittedUrl.protocol === "https:" || submittedUrl.protocol === "http:") {
+      sourceUrl = submittedUrl.toString();
+    }
+  } catch {
+    // Keep the canonical home page when a malformed URL is submitted.
+  }
   const submitted = new Intl.DateTimeFormat("en-CA", {
     dateStyle: "medium",
     timeStyle: "short",
@@ -46,7 +54,11 @@ export function buildQuoteEmail(lead: QuoteLead, reference: string, submittedAt:
     `Vehicle: ${lead.vehicle}`,
     `City or town: ${lead.city}`,
     `Notes: ${lead.message || "None"}`,
-    `Source page: ${sourceUrl}`,
+    "",
+    "SUBMISSION METADATA",
+    `IP Address: ${lead.ipAddress}`,
+    `Browser: ${lead.browser}`,
+    `Page URL: ${sourceUrl}`,
   ].join("\n");
 
   const html = `<!doctype html>
@@ -89,6 +101,14 @@ export function buildQuoteEmail(lead: QuoteLead, reference: string, submittedAt:
         <tr><td style="padding:16px 32px;">
           <p style="margin:0 0 7px;color:#777;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;">Condition, access or timing notes</p>
           <div style="padding:18px 20px;background:#f7f6f3;border-left:4px solid ${brandRed};color:#343538;font-size:16px;line-height:1.65;">${display(lead.message, "No additional notes")}</div>
+        </td></tr>
+        <tr><td style="padding:8px 32px 24px;">
+          <p style="margin:0 0 10px;color:#777;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;">Submission metadata</p>
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;background:#fff;border:1px solid #e2dfda;">
+            <tr><td style="width:120px;padding:12px 14px;border-bottom:1px solid #e2dfda;color:#777;font-size:13px;font-weight:700;vertical-align:top;">IP Address</td><td style="padding:12px 14px;border-bottom:1px solid #e2dfda;color:${ink};font-size:13px;vertical-align:top;word-break:break-word;">${display(lead.ipAddress)}</td></tr>
+            <tr><td style="width:120px;padding:12px 14px;border-bottom:1px solid #e2dfda;color:#777;font-size:13px;font-weight:700;vertical-align:top;">Browser</td><td style="padding:12px 14px;border-bottom:1px solid #e2dfda;color:${ink};font-size:13px;line-height:1.5;vertical-align:top;word-break:break-word;">${display(lead.browser)}</td></tr>
+            <tr><td style="width:120px;padding:12px 14px;color:#777;font-size:13px;font-weight:700;vertical-align:top;">Page URL</td><td style="padding:12px 14px;font-size:13px;line-height:1.5;vertical-align:top;word-break:break-word;"><a href="${escapeHtml(sourceUrl)}" style="color:${brandRed};">${escapeHtml(sourceUrl)}</a></td></tr>
+          </table>
         </td></tr>
         <tr><td style="padding:8px 32px 30px;">
           <table role="presentation" cellspacing="0" cellpadding="0"><tr>
