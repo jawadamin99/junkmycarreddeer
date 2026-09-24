@@ -70,7 +70,11 @@ export function buildQuoteEmail(lead: QuoteLead, reference: string, submittedAt:
     <tr><td align="center">
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:680px;background:#ffffff;border-collapse:collapse;border-top:5px solid ${brandRed};box-shadow:0 12px 34px rgba(17,18,20,.10);">
         <tr><td style="background:${ink};padding:28px 32px;">
-          <img src="https://www.junkmycarreddeer.ca/junk-my-car-red-deer-logo.png" width="230" alt="Junk My Car Red Deer" style="display:block;max-width:100%;height:auto;">
+          <table role="presentation" cellspacing="0" cellpadding="0" style="border-collapse:separate;background:#ffffff;border-radius:4px;">
+            <tr><td style="padding:10px 16px;">
+              <img src="https://www.junkmycarreddeer.ca/junk-my-car-red-deer-logo.png" width="230" alt="Junk My Car Red Deer" style="display:block;max-width:100%;height:auto;">
+            </td></tr>
+          </table>
           <p style="margin:22px 0 5px;color:#ff4a51;font-size:13px;line-height:1.4;font-weight:800;letter-spacing:2px;text-transform:uppercase;">New website inquiry</p>
           <h1 style="margin:0;color:#ffffff;font-size:30px;line-height:1.15;">Cash offer request</h1>
           <p style="margin:10px 0 0;color:#b9b9bb;font-size:15px;line-height:1.55;">${escapeHtml(submitted)} · Ref ${escapeHtml(reference)}</p>

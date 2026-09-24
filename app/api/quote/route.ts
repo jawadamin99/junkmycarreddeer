@@ -63,13 +63,6 @@ export async function POST(request: Request) {
     );
   }
 
-  if (lead.phone.replace(/\D/g, "").length < 10) {
-    return NextResponse.json(
-      { message: "Please enter a complete phone number." },
-      { status: 422 },
-    );
-  }
-
   if (lead.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)) {
     return NextResponse.json(
       { message: "Please enter a valid email address or leave it blank." },
