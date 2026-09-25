@@ -5,7 +5,7 @@ import { LocationPage } from "@/components/location-page";
 
 export const metadata: Metadata = {
   title: "Cash for Cars Blackfalds | Free Towing, Same-Day Offers",
-  description: "Cash for cars in Blackfalds, AB. We buy running, junk, scrap and damaged vehicles, tow free from any driveway or stall, and pay you when we collect.",
+  description: "Cash for cars Blackfalds, AB. We buy running, junk, scrap and damaged vehicles, tow free from any driveway or stall, and pay you when we collect.",
   alternates: { canonical: "https://www.junkmycarreddeer.ca/cash-for-cars-blackfalds" },
   openGraph: { title: "Cash for Cars Blackfalds | Same-Day Offers", description: "Free towing and same-day vehicle offers throughout Blackfalds, Alberta.", url: "https://www.junkmycarreddeer.ca/cash-for-cars-blackfalds", type: "website", images: [{ url: commuterPhoto.src, width: 1200, height: 630, alt: "High-kilometre commuter vehicle in Central Alberta" }] },
 };
@@ -25,6 +25,15 @@ const data = {
   buyConditions: "Blown engines or transmissions, failed inspections, hail, collision, salvage and non-repairable write-offs, fire, flood, severe rust and vehicles already partly stripped. Teenagers' first cars and trucks left after a job ends are frequent pickups here.",
   offers: [["Older car, non-running, complete", "$250 – $800"], ["Non-running with parts demand", "$500 – $1,800"], ["High-kilometre commuter, 8–15 years", "$800 – $3,500"], ["Hail-damaged, mechanically sound", "$1,000 – $6,000"], ["Newer running truck, SUV or car", "$3,000 – $15,000"]] as const,
   valueText: "Kilometres matter here because Blackfalds vehicles accumulate them quickly. Rust in rockers, brake lines and subframes is the other major factor. We also consider whether it runs, what it needs, completeness and whether the catalytic converter remains. Trucks and SUVs retain stronger local value.",
+  servicesIntro: "Most Blackfalds calls come with a deadline attached—a neighbour, a condo board, a second vehicle that is quietly costing money. Each service below is built for that pace, with free towing and payment before the vehicle leaves.",
+  services: [
+    { title: "Junk Car Removal in Blackfalds", before: "A dead car in an attached garage on a sloped Aspen Lakes West driveway is our single most common Blackfalds pickup. Our ", linkLabel: "junk car removal service", href: "/junk-car-removal-red-deer", after: " winches it out of tight modern stalls and townhouse lots, usually the same day because we are only sixteen minutes away." },
+    { title: "Scrap Car Removal in Blackfalds", before: "Six winters of brine on the 2A can rot a commuter car's rockers, subframe and brake lines past the point of a sensible repair. Our ", linkLabel: "scrap car removal", href: "/scrap-car-removal-red-deer", after: " pays on weight, non-ferrous metal and the converter, and takes it through proper end-of-life processing." },
+    { title: "Sell My Car in Blackfalds", before: "The second or third household vehicle that still runs—someone started working from home, or a teenager left for school—is exactly what our ", linkLabel: "sell my car service", href: "/sell-my-car-red-deer", after: " is for. One cash offer, no Marketplace no-shows, no strangers test-driving it past the school." },
+    { title: "Damaged and Write-Off Vehicles in Blackfalds", before: "Newer family vehicles written off after hail or a Highway 2 collision often still carry finance. Our ", linkLabel: "damaged car buying service", href: "/damaged-car-removal-red-deer", after: " handles salvage and non-repairable status and arranges the lien payout as part of the sale, so the buyback does not sit on your driveway for months." },
+    { title: "Car Wreckers Serving Blackfalds", before: "Contractors near the 597 junction and shops in the light industrial area regularly clear retired work trucks and abandoned customer vehicles. As ", linkLabel: "car wreckers", href: "/car-wreckers-red-deer", after: " we dismantle for parts rather than weight alone, which is why several units cleared together earn a better per-vehicle number." },
+    { title: "Free Towing in Blackfalds", before: "Valley Ridge driveway, McKay Ranch visitor stall or a Lacombe County acreage on the edge of town—the pickup costs nothing. ", linkLabel: "Free towing", href: "/free-towing-red-deer", after: " is built into every Blackfalds offer, and short-notice “gone before the weekend” pickups are routine." },
+  ],
   accessTitle: "Where We Collect in Blackfalds", accessIntro: "Driveways, attached garages, visitor stalls, condo lots, commercial yards and industrial properties are all included at no cost.",
   accessItems: [
     { title: "Newer subdivisions", text: "Aspen Lakes West, Valley Ridge, McKay Ranch, Highland Green, Panorama Estates, Womacks Road and Broadway Avenue. Tight garages and sloped driveways are common; a photo helps us plan." },

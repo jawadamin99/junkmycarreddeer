@@ -133,7 +133,7 @@ export default function SellMyCarPage() {
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
                 <p className={styles.kicker}><HandCoins aria-hidden="true" /> The shortest route to sold</p>
-                <h1>Sell My Car in Red Deer <span>— One Offer, No Haggling, Paid the Same Day</span></h1>
+                <h1>Sell My Car Red Deer <span>— One Offer, No Haggling, Paid the Same Day</span></h1>
                 <p className={styles.heroLead}>If you&apos;ve got a car you want gone and would rather not spend a month managing strangers, this is the shortest route from &ldquo;I should sell that&rdquo; to money in your account. Tell us what it is, get a number, and we&apos;ll come to you.</p>
                 <div className={styles.heroActions}><a className="button button-primary" href="#sell-quote">Get My Offer <ArrowDownRight aria-hidden="true" /></a><a className={styles.callLink} href={phoneHref}><Phone aria-hidden="true" /> Call {phoneDisplay}</a></div>
                 <div className={styles.heroChecks}><span><Check aria-hidden="true" /> No ads</span><span><Check aria-hidden="true" /> No test drives</span><span><Check aria-hidden="true" /> No haggling</span></div>

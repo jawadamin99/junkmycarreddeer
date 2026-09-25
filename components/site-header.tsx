@@ -23,6 +23,7 @@ const serviceLinks = [
 ] as const;
 
 const locationLinks = [
+  ["Calgary", "/cash-for-cars-calgary"],
   ["Sylvan Lake", "/cash-for-cars-sylvan-lake"], ["Lacombe", "/cash-for-cars-lacombe"],
   ["Blackfalds", "/cash-for-cars-blackfalds"], ["Springbrook", "/cash-for-cars-springbrook"],
   ["Penhold", "/cash-for-cars-penhold"], ["Innisfail", "/cash-for-cars-innisfail"],

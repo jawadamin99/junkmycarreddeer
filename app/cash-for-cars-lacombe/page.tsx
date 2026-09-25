@@ -5,7 +5,7 @@ import { LocationPage } from "@/components/location-page";
 
 export const metadata: Metadata = {
   title: "Cash for Cars Lacombe AB | Free Pickup, Paid Same Day",
-  description: "Cash for cars in Lacombe, Alberta. We buy running, junk, scrap, farm and damaged vehicles, tow free from town and county properties, and pay on pickup.",
+  description: "Cash for cars Lacombe, Alberta. We buy running, junk, scrap, farm and damaged vehicles, tow free from town and county properties, and pay on pickup.",
   alternates: { canonical: "https://www.junkmycarreddeer.ca/cash-for-cars-lacombe" },
   openGraph: { title: "Cash for Cars Lacombe AB | Free Pickup", description: "Cash offers and free towing for cars, trucks and farm vehicles throughout Lacombe and Lacombe County.", url: "https://www.junkmycarreddeer.ca/cash-for-cars-lacombe", type: "website", images: [{ url: farmPhoto.src, width: 1200, height: 630, alt: "Older farm truck ready for pickup near Lacombe" }] },
 };
@@ -25,6 +25,15 @@ const data = {
   buyConditions: "No-starts, blown engines, failed transmissions, hail or collision damage, salvage and non-repairable write-offs, fire, flood, frame rust, failed inspections, partly stripped vehicles and anything sitting in a shelterbelt for a decade.",
   offers: [["Older complete car, non-running", "$250 – $800"], ["Farm or work truck, non-running, complete", "$600 – $2,000"], ["High-kilometre runner, 10+ years", "$800 – $3,500"], ["Hail-damaged, mechanically sound", "$1,000 – $6,000"], ["Newer running truck, SUV or car", "$3,000 – $15,000"], ["Three or more vehicles, one location", "Per-vehicle offer improves"]] as const,
   valueText: "Weight sets the floor, so a 3/4-ton diesel begins higher than a compact car. Above that we price reusable drivetrain, body panels, glass, wheels and the catalytic converter. Completeness is frequently underestimated: removing an engine and wheels removes much of the value.",
+  servicesIntro: "Heritage-district garage, farm fence line or student rental lot—each service below covers Lacombe and Lacombe County, with free towing and payment on the day we collect.",
+  services: [
+    { title: "Junk Car Removal in Lacombe", before: "The long-owned car that has been sitting in a single-stall garage off a Main Street-era alley is our most typical Lacombe job. Our ", linkLabel: "junk car removal service", href: "/junk-car-removal-red-deer", after: " handles narrow doors, awkward support posts and lane access—often by skating the vehicle out to the alley before winching it on." },
+    { title: "Scrap Car Removal in Lacombe", before: "Once a farm half-ton has been picked over for parts and left in the shelterbelt, it is scrap—heavy, but no longer complete. Our ", linkLabel: "scrap car removal", href: "/scrap-car-removal-red-deer", after: " pays on curb weight and remaining non-ferrous metal, and processes the vehicle properly so old oil and coolant do not stay on county farmland." },
+    { title: "Sell My Car in Lacombe", before: "Settling an estate or selling a house with a still-running car in the garage? Our ", linkLabel: "sell my car service", href: "/sell-my-car-red-deer", after: " gives you one written cash offer for a driveable vehicle—no ads to post from out of town, no strangers coming to a property that may already be empty." },
+    { title: "Damaged and Write-Off Vehicles in Lacombe", before: "Hail tracks across Lacombe County most summers, and winter collisions on Highway 2 and 12 add their share. Our ", linkLabel: "damaged car buying service", href: "/damaged-car-removal-red-deer", after: " buys hail, collision and insurance buyback vehicles—salvage and non-repairable status included—and prices the healthy drivetrain behind the damage." },
+    { title: "Car Wreckers Serving Lacombe", before: "Grain trucks and three-quarter-tons are full of components other farms still need—axles, transfer cases, hoists, boxes. As ", linkLabel: "car wreckers", href: "/car-wreckers-red-deer", after: " we dismantle and recover those parts, which is why a complete county truck earns more from us than a weight-only scrap price." },
+    { title: "Free Towing in Lacombe", before: "Twenty-five minutes up the 2A, then down a gravel approach to the quonset—no charge. ", linkLabel: "Free towing", href: "/free-towing-red-deer", after: " covers town, Burman-area rentals and every farm in Lacombe County, including four-truck fence-line clear-outs in a single visit." },
+  ],
   accessTitle: "Getting It Out, Including the Awkward Ones", accessIntro: "Old garages, narrow alleys, gravel approaches and shelterbelts are normal work. A quick photo before dispatch helps us bring the right equipment.",
   accessItems: [
     { title: "Heritage garages and back alleys", text: "Narrow doors, inconvenient support posts and alleys designed long before flat decks are all workable. We can use a longer winch line or skate the vehicle into the alley first." },

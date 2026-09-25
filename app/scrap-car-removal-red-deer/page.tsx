@@ -227,7 +227,7 @@ export default function ScrapCarRemovalPage() {
                 <Link href="/">Home</Link><ChevronRight aria-hidden="true" /><span>Scrap Car Removal</span>
               </nav>
               <p className={styles.kicker}><Recycle aria-hidden="true" /> Scrap value, explained</p>
-              <h1>Scrap Car Removal in Red Deer <span>— Get Paid What the Metal Is Worth</span></h1>
+              <h1>Scrap Car Removal Red Deer <span>— Get Paid What the Metal Is Worth</span></h1>
               <p className={styles.heroLead}>&ldquo;Scrap&rdquo; isn&apos;t a verdict on your car. It&apos;s a pricing method. When a vehicle is past the point where anyone wants to drive it, it still has a specific dollar value based on what it weighs and what comes off it—and you should be the one collecting that value.</p>
               <div className={styles.heroActions}>
                 <a className="button button-primary" href="#scrap-quote">What&apos;s Mine Worth? <ArrowDownRight aria-hidden="true" /></a>

@@ -212,7 +212,7 @@ export default function JunkCarRemovalPage() {
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
                 <p className={styles.kicker}><Truck aria-hidden="true" /> Free removal, cash paid</p>
-                <h1>Junk Car Removal in Red Deer <span>— We Haul It, You Get Paid</span></h1>
+                <h1>Junk Car Removal Red Deer <span>— We Haul It, You Get Paid</span></h1>
                 <p className={styles.heroLead}>Some vehicles stop being transportation and start being furniture. If there&apos;s one beside your garage, behind the shop, or under a tarp on the side of the house, we&apos;ll come and take it—free of charge—and put cash in your hand for it.</p>
                 <div className={styles.heroActions}>
                   <a className="button button-primary" href="#junk-quote">Get My Offer <ArrowDownRight aria-hidden="true" /></a>

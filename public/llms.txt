@@ -26,6 +26,7 @@ Address: 4909 48 Street, Red Deer, Alberta T4N 1S8, Canada
 
 ## Service locations
 
+- [Calgary](https://www.junkmycarreddeer.ca/cash-for-cars-calgary): Running, used, damaged, inspection-failed and non-running vehicles with free citywide towing.
 - [Sylvan Lake](https://www.junkmycarreddeer.ca/cash-for-cars-sylvan-lake)
 - [Lacombe](https://www.junkmycarreddeer.ca/cash-for-cars-lacombe)
 - [Blackfalds](https://www.junkmycarreddeer.ca/cash-for-cars-blackfalds)
@@ -49,4 +50,3 @@ Address: 4909 48 Street, Red Deer, Alberta T4N 1S8, Canada
 
 - [XML sitemap](https://www.junkmycarreddeer.ca/sitemap.xml)
 - [Robots](https://www.junkmycarreddeer.ca/robots.txt)
-

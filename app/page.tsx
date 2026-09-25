@@ -275,7 +275,7 @@ export default function Home() {
           <div className="shell hero-grid">
             <div className="hero-copy">
               <div className="location-pill"><MapPin aria-hidden="true" /> Red Deer, Alberta</div>
-              <h1>Cash for Cars in Red Deer <span>— Get Paid Today, Running or Not</span></h1>
+              <h1>Cash for Cars Red Deer <span>— Get Paid Today, Running or Not</span></h1>
               <p>We buy used, junk, scrap, damaged, and non-running vehicles across Red Deer and Central Alberta. Get a straight cash offer the same day, free towing, and money in your hand at pickup.</p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#quote">Get My Cash Offer <ArrowDownRight aria-hidden="true" /></a>

@@ -9,7 +9,7 @@ const servicePaths = [
 ];
 const supportPaths = ["/about", "/how-it-works", "/what-we-buy", "/faq", "/contact"];
 const locationPaths = [
-  "/cash-for-cars-sylvan-lake", "/cash-for-cars-lacombe", "/cash-for-cars-blackfalds",
+  "/cash-for-cars-calgary", "/cash-for-cars-sylvan-lake", "/cash-for-cars-lacombe", "/cash-for-cars-blackfalds",
   "/cash-for-cars-springbrook", "/cash-for-cars-penhold", "/cash-for-cars-innisfail",
   "/cash-for-cars-ponoka", "/cash-for-cars-olds", "/cash-for-cars-stettler",
   "/cash-for-cars-rimbey", "/cash-for-cars-eckville", "/cash-for-cars-bentley",

@@ -215,7 +215,7 @@ export default function FreeTowingRedDeerPage() {
                 <Link href="/">Home</Link><ChevronRight aria-hidden="true" /><span>Free Towing</span>
               </nav>
               <p className={styles.kicker}><Truck aria-hidden="true" /> Pickup is already included</p>
-              <h1>Free Towing in Red Deer <span>— Included in Every Offer We Make</span></h1>
+              <h1>Free Towing Red Deer <span>— Included in Every Offer We Make</span></h1>
               <p className={styles.heroLead}>The tow is the part people expect to get caught on. So let&apos;s deal with it directly: we don&apos;t charge for it, we don&apos;t deduct it, and it doesn&apos;t matter where the vehicle is sitting.</p>
               <div className={styles.heroActions}>
                 <a className="button button-primary" href="#towing-quote">Book a Free Pickup <ArrowRight aria-hidden="true" /></a>
